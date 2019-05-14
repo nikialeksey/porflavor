@@ -1,0 +1,35 @@
+plugins {
+    id 'java-gradle-plugin'
+    id 'com.gradle.plugin-publish' version '0.10.0'
+}
+
+pluginBundle {
+    website = 'https://github.com/nikialeksey/porflavor'
+    vcsUrl = 'https://github.com/nikialeksey/porflavor'
+    tags = ['android', 'gradle', 'productFlavors', 'flavors']
+}
+
+gradlePlugin {
+    plugins {
+        greetingsPlugin {
+            id = 'com.nikialeksey.porflavor'
+            displayName = 'PorFlavor'
+            description = 'PorFlavor - is the plugin for extending android productFlavors'
+            implementationClass = 'com.nikialeksey.porflavor.PorFlavorPlugin'
+        }
+    }
+}
+
+sourceCompatibility = 1.8
+group = ext.group
+version = '0.0.1'
+
+repositories {
+    mavenCentral()
+    google()
+}
+
+dependencies {
+    implementation gradleApi()
+    implementation 'com.android.tools.build:gradle:3.3.2'
+}
