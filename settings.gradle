@@ -1,3 +1,3 @@
 rootProject.name = 'porflavor'
-include 'plugin'
+include 'porflavor-gradle-plugin'
 
