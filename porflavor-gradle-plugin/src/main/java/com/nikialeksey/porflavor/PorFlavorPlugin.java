@@ -1,7 +1,7 @@
 package com.nikialeksey.porflavor;
 
+import com.android.build.gradle.AppExtension;
 import com.android.build.gradle.api.ApplicationVariant;
-import com.android.build.gradle.internal.dsl.BaseAppModuleExtension;
 import com.android.build.gradle.internal.dsl.ProductFlavor;
 
 import org.gradle.api.Plugin;
@@ -15,7 +15,7 @@ import java.util.List;
 public class PorFlavorPlugin implements Plugin<Project> {
     @Override
     public void apply(final Project project) {
-        final BaseAppModuleExtension app = project.getExtensions().getByType(BaseAppModuleExtension.class);
+        final AppExtension app = project.getExtensions().getByType(AppExtension.class);
         final ExtensionAware appExtension = (ExtensionAware) app;
 
         final PorFlavorExtension variants = appExtension.getExtensions().create("porflavor", PorFlavorExtension.class);
