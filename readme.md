@@ -48,7 +48,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath "gradle.plugin.com.nikialeksey:porflavor-gradle-plugin:0.0.2"
+    classpath "gradle.plugin.com.nikialeksey:porflavor-gradle-plugin:0.0.3"
   }
 }
 ```
