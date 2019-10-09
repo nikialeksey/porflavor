@@ -22,7 +22,7 @@ gradlePlugin {
 
 sourceCompatibility = 1.8
 group = ext.group
-version = '0.0.2'
+version = '0.0.3'
 
 repositories {
     mavenCentral()
@@ -32,4 +32,6 @@ repositories {
 dependencies {
     implementation gradleApi()
     implementation 'com.android.tools.build:gradle:3.3.2'
+
+    testImplementation 'junit:junit:4.12'
 }
