@@ -7,14 +7,19 @@ import java.util.List;
 
 public class FlavorExtension {
 
-    private final List<Field> fields;
+    private final List<BuildConfigField> fields;
+    private final List<ResValue> resValues;
 
     public FlavorExtension() {
-        this(new ArrayList<>());
+        this(new ArrayList<>(), new ArrayList<>());
     }
 
-    public FlavorExtension(final List<Field> fields) {
+    public FlavorExtension(
+        final List<BuildConfigField> fields,
+        final List<ResValue> resValues
+    ) {
         this.fields = fields;
+        this.resValues = resValues;
     }
 
     public void buildConfigField(
@@ -22,29 +27,23 @@ public class FlavorExtension {
             final String name,
             final String value
     ) {
-        fields.add(new Field(type, name, value));
+        fields.add(new BuildConfigField(type, name, value));
+    }
+
+    public void resValue(
+        final String type,
+        final String name,
+        final String value
+    ) {
+        resValues.add(new ResValue(type, name, value));
     }
 
     public void fillIn(final ApplicationVariant variant) {
-        for (Field field : fields) {
+        for (final BuildConfigField field : fields) {
             field.fillIn(variant);
         }
-    }
-
-    private static class Field {
-        private final String type;
-        private final String name;
-        private final String value;
-
-
-        private Field(String type, String name, String value) {
-            this.type = type;
-            this.name = name;
-            this.value = value;
-        }
-
-        public void fillIn(final ApplicationVariant variant) {
-            variant.buildConfigField(type, name, value);
+        for (final ResValue resValue : resValues) {
+            resValue.fillIn(variant);
         }
     }
 }

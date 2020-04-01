@@ -11,7 +11,7 @@
 # What it is?
 
 ProFlavor is the plugin for extending the android product flavors. When you use multiple dimensions you can not
-define unique build config fields per flavor:
+define unique build config fields or res values per flavor:
 ```groovy
 android {
     flavorDimensions 'brand', 'version'
@@ -48,7 +48,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath "gradle.plugin.com.nikialeksey:porflavor-gradle-plugin:0.0.3"
+    classpath "gradle.plugin.com.nikialeksey:porflavor-gradle-plugin:0.1.0"
   }
 }
 ```
@@ -82,9 +82,11 @@ android {
     porflavor {
         Brand1Store {
             buildConfigField "boolean", "fooFeatureEnabled", "false"
+            resValue "string", "appName", "App"
         }
         Brand1Staging {
             buildConfigField "boolean", "fooFeatureEnabled", "false"
+            resValue "string", "appName", "App Staging"
         }
     }
 }
