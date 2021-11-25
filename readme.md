@@ -1,12 +1,17 @@
 # PorFlavor
 
 ![Elegant Objects Respected Here](http://www.elegantobjects.org/badge.svg)
+[![Build Status][build-status-badge]][build-status-link]
+[![codecov][codecov-badge]][codecov-link]
 
-![nullfree status](https://iwillfailyou.com/nullfree/nikialeksey/porflavor)
+[![Gradle plugin version][gradle-plugin-badge]][gradle-plugin-link]
+[![License: MIT][license-badge]][license-link]
 
-[![Build Status](https://travis-ci.org/nikialeksey/porflavor.svg?branch=master)](https://travis-ci.org/nikialeksey/porflavor)
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/nikialeksey/porflavor/blob/master/LICENSE)
+![nullfree status](https://youshallnotpass.dev/nullfree/nikialeksey/porflavor)
+![staticfree status](https://youshallnotpass.dev/staticfree/nikialeksey/porflavor)
+![allfinal status](https://youshallnotpass.dev/allfinal/nikialeksey/porflavor)
+![allpublic status](https://youshallnotpass.dev/allpublic/nikialeksey/porflavor)
+![setterfree status](https://youshallnotpass.dev/setterfree/nikialeksey/porflavor)
 
 # What it is?
 
@@ -48,7 +53,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath "gradle.plugin.com.nikialeksey:porflavor-gradle-plugin:0.1.0"
+    classpath "gradle.plugin.com.nikialeksey:porflavor-gradle-plugin:<latest>"
   }
 }
 ```
@@ -56,6 +61,7 @@ buildscript {
 And then apply it:
 ```groovy
 apply plugin 'com.android.application'
+apply plugin: 'com.nikialeksey.porflavor'
 
 android {
     flavorDimensions 'brand', 'version'
@@ -78,7 +84,6 @@ android {
         }
     }
     
-    apply plugin: 'com.nikialeksey.porflavor'
     porflavor {
         Brand1Store {
             buildConfigField "boolean", "fooFeatureEnabled", "false"
@@ -91,3 +96,12 @@ android {
     }
 }
 ``` 
+
+[build-status-badge]: https://github.com/nikialeksey/porflavor/actions/workflows/ci.yml/badge.svg
+[build-status-link]: https://github.com/nikialeksey/porflavor/actions/
+[codecov-badge]: https://codecov.io/gh/nikialeksey/porflavor/branch/master/graph/badge.svg
+[codecov-link]: https://codecov.io/gh/nikialeksey/porflavor
+[gradle-plugin-badge]: https://img.shields.io/maven-metadata/v/https/plugins.gradle.org/m2/gradle/plugin/com/nikialeksey/porflavor-gradle-plugin/maven-metadata.xml.svg?label=plugin
+[gradle-plugin-link]: https://plugins.gradle.org/plugin/com.nikialeksey.porflavor
+[license-badge]: https://img.shields.io/badge/License-MIT-yellow.svg
+[license-link]: https://github.com/nikialeksey/porflavor/blob/master/LICENSE

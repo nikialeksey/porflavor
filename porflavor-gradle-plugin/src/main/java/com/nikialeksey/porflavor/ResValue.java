@@ -1,8 +1,8 @@
 package com.nikialeksey.porflavor;
 
-import com.android.build.gradle.api.ApplicationVariant;
+import com.android.build.gradle.api.BaseVariant;
 
-public class ResValue {
+public final class ResValue {
     private final String type;
     private final String name;
     private final String value;
@@ -17,7 +17,7 @@ public class ResValue {
         this.value = value;
     }
 
-    public void fillIn(final ApplicationVariant variant) {
+    public void fillIn(final BaseVariant variant) {
         variant.resValue(type, name, value);
     }
 }

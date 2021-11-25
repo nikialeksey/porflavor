@@ -1,12 +1,15 @@
 plugins {
-    id 'com.nikialeksey.nullfree' version '1.4.2'
+    id 'dev.youshallnotpass' version '0.6.1'
+}
+
+youshallnotpass {
+    nullfree {
+        skipComparisons = true
+    }
 }
 
 allprojects {
     ext {
         group = 'com.nikialeksey'
-    }
-    repositories {
-        mavenCentral()
     }
 }
