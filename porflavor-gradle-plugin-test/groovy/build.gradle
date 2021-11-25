@@ -1,0 +1,54 @@
+plugins {
+    id("com.android.application").version("7.0.3")
+    id("com.nikialeksey.porflavor")
+}
+
+repositories {
+    gradlePluginPortal()
+    google()
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.nikialeksey.porflavor.groovy.test"
+        minSdk 16
+        targetSdk 31
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    flavorDimensions 'brand', 'version'
+    productFlavors {
+        Brand1 {
+            dimension 'brand'
+        }
+        Brand2 {
+            dimension 'brand'
+        }
+        Brand3 {
+            dimension 'brand'
+        }
+        Store {
+            dimension 'version'
+        }
+        Staging {
+            dimension 'version'
+        }
+    }
+    porflavor {
+        Brand1Store {
+            buildConfigField "boolean", "fooFeatureEnabled", "false"
+            resValue "string", "appName", "App"
+        }
+        Brand1Staging {
+            buildConfigField "boolean", "fooFeatureEnabled", "false"
+            resValue "string", "appName", "App Staging"
+        }
+    }
+}

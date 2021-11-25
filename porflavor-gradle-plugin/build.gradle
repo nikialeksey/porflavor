@@ -1,7 +1,9 @@
 plugins {
     id 'java-gradle-plugin'
-    id 'com.gradle.plugin-publish' version '0.11.0'
+    id 'com.gradle.plugin-publish' version '0.18.0'
 }
+
+apply from: '../gradle/jacoco.gradle'
 
 pluginBundle {
     website = 'https://github.com/nikialeksey/porflavor'
@@ -22,7 +24,7 @@ gradlePlugin {
 
 sourceCompatibility = 1.8
 group = ext.group
-version = '0.1.0'
+version = '7.0.0'
 
 repositories {
     mavenCentral()
@@ -31,7 +33,7 @@ repositories {
 
 dependencies {
     implementation gradleApi()
-    implementation 'com.android.tools.build:gradle:3.3.2'
+    implementation 'com.android.tools.build:gradle:7.0.3'
 
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13.2'
 }

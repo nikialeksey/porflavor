@@ -1,8 +1,8 @@
 package com.nikialeksey.porflavor;
 
-import com.android.build.gradle.api.ApplicationVariant;
+import com.android.build.gradle.api.BaseVariant;
 
-public class BuildConfigField {
+public final class BuildConfigField {
     private final String type;
     private final String name;
     private final String value;
@@ -17,7 +17,7 @@ public class BuildConfigField {
         this.value = value;
     }
 
-    public void fillIn(final ApplicationVariant variant) {
+    public void fillIn(final BaseVariant variant) {
         variant.buildConfigField(type, name, value);
     }
 }
