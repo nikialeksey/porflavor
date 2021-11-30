@@ -95,7 +95,7 @@ android {
         }
     }
 }
-``` 
+```
 
 [build-status-badge]: https://github.com/nikialeksey/porflavor/actions/workflows/ci.yml/badge.svg
 [build-status-link]: https://github.com/nikialeksey/porflavor/actions/

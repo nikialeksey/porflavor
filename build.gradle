@@ -3,6 +3,7 @@ plugins {
 }
 
 youshallnotpass {
+    exclude = ["glob:**/test/**/PorFlavorPluginTest.java"]
     nullfree {
         skipComparisons = true
     }
