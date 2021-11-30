@@ -8,7 +8,7 @@ apply from: '../gradle/jacoco.gradle'
 pluginBundle {
     website = 'https://github.com/nikialeksey/porflavor'
     vcsUrl = 'https://github.com/nikialeksey/porflavor'
-    tags = ['android', 'gradle', 'productFlavors', 'flavors']
+    tags = ['android', 'productFlavors', 'flavors']
 }
 
 gradlePlugin {
@@ -22,7 +22,10 @@ gradlePlugin {
     }
 }
 
-sourceCompatibility = 1.8
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
 group = ext.group
 version = '7.0.0'
 
@@ -32,8 +35,8 @@ repositories {
 }
 
 dependencies {
-    implementation gradleApi()
-    implementation 'com.android.tools.build:gradle:7.0.3'
+    implementation(gradleApi())
+    implementation('com.android.tools.build:gradle:7.0.3')
 
-    testImplementation 'junit:junit:4.13.2'
+    testImplementation('junit:junit:4.13.2')
 }
