@@ -15,7 +15,7 @@
 
 # What it is?
 
-ProFlavor is the plugin for extending the android product flavors. When you use multiple dimensions you can not
+PorFlavor is the plugin for extending the android product flavors. When you use multiple dimensions you can not
 define unique build config fields or res values per flavor:
 ```groovy
 android {
